@@ -1,0 +1,273 @@
+/* =================== RESET BÁSICO =================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f0fc; /* Fondo lila muy suave */
+    color: #333;
+}
+
+/* =================== CABECERA / LOGO =================== */
+header {
+    background-color: #e0b0ff; /* Lila más fuerte */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo-cabecera {
+    width: 150px;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+header nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* =================== SECCIONES GENERALES =================== */
+main section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e0b0ff;
+}
+
+#citaBtn {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 1.1em;
+    border-radius: 5px;
+}
+
+#servicios ul {
+    list-style: none;
+    padding: 0;
+}
+
+#servicios li {
+    background-color: #fff0f5;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 400px;
+    border-left: 5px solid #e0b0ff;
+}
+
+/* =================== GALERÍA =================== */
+#galeria {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#galeria h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #a64ca6;
+}
+
+#galeria p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   CARRUSEL - MOBILE FIRST
+   ========================================================= */
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 6px 0;
+}
+
+.carousel {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 8px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+/* Ocultar scrollbar */
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+.carousel {
+    scrollbar-width: none;
+}
+
+/* Imágenes */
+.carousel img {
+    flex: 0 0 72%;
+    max-width: 320px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    scroll-snap-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    cursor: pointer;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+/* TABLET */
+@media (min-width: 600px) {
+    .carousel img {
+        flex: 0 0 45%;
+        height: 220px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 900px) {
+    .carousel img {
+        flex: 0 0 28%;
+        height: 230px;
+    }
+}
+
+/* Hover solo en desktop */
+@media (hover: hover) and (pointer: fine) {
+    .carousel img:hover {
+        transform: scale(1.06);
+        box-shadow: 0 8px 18px rgba(0,0,0,0.22);
+    }
+}
+
+/* =================== BOTONES =================== */
+
+.carousel-btn {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .carousel-btn {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0,0,0,0.45);
+        border: none;
+        color: white;
+        font-size: 28px;
+        padding: 10px 14px;
+        cursor: pointer;
+        border-radius: 8px;
+        z-index: 20;
+        transition: background 0.3s ease;
+    }
+
+    .carousel-btn:hover {
+        background: rgba(0,0,0,0.65);
+    }
+
+    .prev { left: 12px; }
+    .next { right: 12px; }
+}
+
+/* =================== MODAL (AMPLIAR IMAGEN) =================== */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.82);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px;
+}
+
+#modal.activo {
+    display: flex;
+}
+
+/* 🔑 imagen con z-index inferior */
+#modalImg {
+    width: 100%;
+    max-width: 900px;
+    max-height: calc(100vh - 80px);
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+    z-index: 10000;
+}
+
+/* 🔑 botón X siempre por encima */
+#closeModal {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 10001;
+    line-height: 1;
+}
+
+/* =================== PIE DE PÁGINA =================== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+}
+
+/* =================== UTILIDAD =================== */
+.hidden {
+    display: none !important;
+}
+
+
+
+/* =================== HEADER - VERSIÓN MÓVIL =================== */
+@media (max-width: 600px) {
+
+    header h1 {
+        display: flex;
+        flex-direction: column;   /* logo arriba, texto abajo */
+        align-items: center;
+        gap: 10px;
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+
+    .logo-cabecera {
+        width: 120px;            /* un poco más pequeño en móvil */
+        margin: 0;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    header nav a {
+        margin: 0;
+        font-size: 1rem;
+    }
+}
