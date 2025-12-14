@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manicura Profesional - [Tu Nombre]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1> <img src="img/logoes.jpeg" alt="logo de negocio" class="logo-cabecera"> Spa de uñas</h1>
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="presentacion" class="hero">
+            <h2>Transforma tus manos con un toque de arte.</h2>
+            <p>Especialistas en uñas acrílicas, gel, semipermanente y diseños personalizados.</p>
+            <button id="citaBtn">¡Agenda tu Cita Hoy!</button>
+        </section>
+
+        <section id="servicios">
+            <h3>Nuestros Servicios</h3>
+            <ul>
+                <li>Manicura Clásica</li>
+                <li>Uñas Acrílicas</li>
+                <li>Uñas de Gel</li>
+                <li>Diseño de Arte en Uñas</li>
+            </ul>
+        </section>
+
+        <!-- ===================== GALERÍA / CARRUSEL ===================== -->
+        <section id="galeria">
+    <h3>Galería de Trabajos</h3>
+    <p>Explora nuestros diseños profesionales.</p>
+
+    <div class="carousel-container">
+
+        <!-- Botón anterior -->
+        <button class="carousel-btn prev">&#10094;</button>
+
+        <!-- Carrusel -->
+        <div class="carousel">
+            <img src="img/imagen-1.jpeg" alt="Trabajo 1">
+            <img src="img/imagen-2.jpeg" alt="Trabajo 2">
+            <img src="img/imagen-3.jpeg" alt="Trabajo 3">
+            <img src="img/imagen-4.jpeg" alt="Trabajo 4">
+            <img src="img/imagen-5.jpeg" alt="Trabajo 5">
+            <img src="img/imagen-6.jpeg" alt="Trabajo 6">
+            <img src="img/imagen-7.jpeg" alt="Trabajo 7">
+            <img src="img/imagen-8.jpeg" alt="Trabajo 8">
+            <img src="img/imagen-9.jpeg" alt="Trabajo 9">
+            <img src="img/imagen-10.jpeg" alt="Trabajo 10">
+            <img src="img/imagen-11.jpeg" alt="Trabajo 11">
+            <img src="img/imagen-12.jpeg" alt="Trabajo 12">
+            <img src="img/imagen-13.jpeg" alt="Trabajo 13">
+            <img src="img/imagen-14.jpeg" alt="Trabajo 14">
+            <img src="img/imagen-15.jpeg" alt="Trabajo 15">
+            <img src="img/imagen-16.jpeg" alt="Trabajo 16">
+        </div>
+
+        <!-- Botón siguiente -->
+        <button class="carousel-btn next">&#10095;</button>
+    </div>
+</section>
+
+
+        <!-- ========================== MODAL ========================== -->
+        <div id="modal" class="modal">
+            <span id="closeModal" class="close">&times;</span>
+            <img id="modalImg" class="modal-content">
+        </div>
+
+        <section id="contacto">
+            <h3>Contacto y Ubicación</h3>
+            <p>Teléfono: 555-1234</p>
+            <p>Dirección: Calle Ficticia #101</p>
+            <p>Horario: Lun - Sáb, 10:00 - 18:00</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 JOVANNY A. C. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
